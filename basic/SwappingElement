@@ -1,0 +1,18 @@
+public class SwappingElement{
+    public static void main(String[] args){
+        
+        int[] arr = {10, 20, 30, 40};
+        
+        // a=a+b;
+        // b=a-b;
+        // a=a-b;
+        
+        arr[0]=arr[0]+arr[arr.length-1];
+        arr[arr.length-1]=arr[0]-arr[arr.length-1];
+        arr[0]=arr[0]-arr[arr.length-1];
+        
+        for(int num : arr){
+            System.out.print(num+" ");
+        }
+    }
+}
