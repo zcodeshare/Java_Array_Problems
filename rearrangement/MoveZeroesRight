@@ -1,0 +1,18 @@
+public class MoveZeroesRight {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 0, 2, 0, 3, 0, 4};
+        int[] result = new int[arr.length];
+        int index = 0;
+
+        for (int num : arr) {
+            if (num != 0) {
+                result[index++] = num;
+            }
+        }
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
