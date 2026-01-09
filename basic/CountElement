@@ -1,0 +1,14 @@
+public class CountElement{
+    public static void main(String[] args){
+        int[] arr = {5, 2, 5, 3, 5};
+        int key = 5;
+        int count = 0;
+        
+        for(int num : arr){
+            if(num == key){
+                count++;
+            }
+        }
+        System.out.println("Number of 5s = " + count);
+    }
+}
