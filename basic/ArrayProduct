@@ -1,0 +1,12 @@
+public class ArrayProduct{
+    public static void main(String[] args){
+        
+        int[] arr = {1, 2, 3, 4, 5};
+        int prod = 1;
+        
+        for(int num : arr){
+            prod*=num;
+        }
+        System.out.println("Product = "+prod);
+    }
+}
