@@ -1,0 +1,21 @@
+public class DeleteAtPosition {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+        int index = 2;
+
+        int[] result = new int[arr.length - 1];
+
+        for (int i = 0; i < index; i++) {
+            result[i] = arr[i];
+        }
+
+        for (int i = index + 1; i < arr.length; i++) {
+            result[i - 1] = arr[i];
+        }
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
