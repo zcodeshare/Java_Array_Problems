@@ -1,4 +1,4 @@
-public class EvenPositionFor {
+public class EvenPosition {
     public static void main(String[] args) {
 
         int[] arr = {5, 2, 9, 1, 7, 4};
