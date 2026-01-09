@@ -1,0 +1,13 @@
+public class ElementAccess{
+    public static void main(String[] args){
+        int[] arr = {10, 20, 30, 40};
+        int idx = 2;
+        
+        if(idx>=0 && idx<arr.length){
+            System.out.println("Element : "+arr[idx]);
+        }else{
+            System.out.println("Index out of bounds");
+        }
+        System.out.println("Last Element : "+arr[arr.length-1]);
+    }
+}
