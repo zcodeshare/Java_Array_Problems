@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class ElementReplace{
+    public static void main(String[] args){
+        int[] arr = {1, 5, 3, 5};
+        
+        int max = arr[0];
+        
+        for(int num : arr){
+            if(num > max){
+                max=num;
+            }
+        }
+        
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==max){
+                arr[i]=100;
+            }
+        }
+        
+        System.out.println(Arrays.toString(arr));
+    }
+}
