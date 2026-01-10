@@ -1,0 +1,37 @@
+import java.util.HashSet;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MissingNumbersInUnknownRange {
+    public static void main(String[] args) {
+
+        int[] arr = {3, 7, 1, 2, 8, 4, 10};
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+            if (num < min) {
+                min = num;
+            }
+        }
+
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+
+        List<Integer> missing = new ArrayList<>();
+        for (int i = min; i <= max; i++) {
+            if (!set.contains(i)) {
+                missing.add(i);
+            }
+        }
+
+        System.out.println("Missing numbers: " + missing);
+    }
+}
