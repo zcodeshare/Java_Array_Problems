@@ -1,0 +1,12 @@
+
+2D Array → A two-dimensional array is an array of arrays used to store data in tabular (row and column) form.
+
+arr.length → Returns the total number of rows in a 2D array.
+
+arr[i].length → Returns the total number of columns in the i-th row of a 2D array.
+
+👉 Extra clarity (yaad rakhne ke liye):
+
+arr.length = rows
+
+arr[i].length = columns of that particular row
