@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class SameFrequencyCheck {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 2, 3};
+        int[] b = {2, 3, 1, 2};
+
+        Map<Integer, Integer> mapA = new HashMap<>();
+        Map<Integer, Integer> mapB = new HashMap<>();
+
+        for (int num : a) {
+            mapA.put(num, mapA.getOrDefault(num, 0) + 1);
+        }
+
+        for (int num : b) {
+            mapB.put(num, mapB.getOrDefault(num, 0) + 1);
+        }
+
+        boolean same = mapA.equals(mapB);
+
+        System.out.println(same);
+    }
+}
