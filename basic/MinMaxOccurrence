@@ -1,0 +1,26 @@
+public class MinMaxOccurrence {
+    public static void main(String[] args) {
+
+        int[] arr = {2, 4, 5, 2, 7, 2, 9, 2};
+        int key = 2;
+
+        int minIndex = -1;
+        int maxIndex = -1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                if (minIndex == -1) {
+                    minIndex = i;
+                }
+                maxIndex = i;
+            }
+        }
+
+        if (minIndex == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Minimum occurrence index: " + minIndex);
+            System.out.println("Maximum occurrence index: " + maxIndex);
+        }
+    }
+}
