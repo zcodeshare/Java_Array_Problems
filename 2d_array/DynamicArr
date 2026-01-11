@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class DynamicArr {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+
+        int[][] dynamic = new int[rows][];
+        for (int i = 0; i < rows; i++) {
+            int cols = sc.nextInt();
+            dynamic[i] = new int[cols];
+            for (int j = 0; j < cols; j++) {
+                dynamic[i][j] = i + j;
+            }
+        }
+
+        for (int i = 0; i < dynamic.length; i++) {
+            for (int j = 0; j < dynamic[i].length; j++) {
+                System.out.print(dynamic[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
