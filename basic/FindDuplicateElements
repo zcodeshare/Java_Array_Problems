@@ -1,4 +1,4 @@
-public class FindDuplicateElements {
+public class DuplicateElements {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 2, 4, 1};
 
