@@ -1,17 +1,50 @@
-public class MoveZeroesLeft {
+public class ZeroToLeftOrderPreserved {
     public static void main(String[] args) {
-
-        int[] arr = {1, 0, 2, 0, 3, 0, 4};
+        int[] arr = {0, 1, 0, 3, 12, 0, 5};
         int[] result = new int[arr.length];
-        int index = arr.length - 1;
+        int idx = 0;
 
-        for (int i = arr.length - 1; i >= 0; i--) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                result[idx++] = arr[i];
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] != 0) {
-                result[index--] = arr[i];
+                result[idx++] = arr[i];
             }
         }
 
         for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+public class ZeroToLeftInPlace {
+    public static void main(String[] args) {
+        int[] arr = {0, 1, 0, 3, 12, 0, 5};
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            if (arr[left] == 0) {
+                left++;
+            } else if (arr[right] != 0) {
+                right--;
+            } else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        for (int num : arr) {
             System.out.print(num + " ");
         }
     }
