@@ -1,4 +1,4 @@
-public class EvenOddRearrangement {
+public class EvenOddOrderPreserved {
     public static void main(String[] args){
         int[] arr = {1,2,3,4,5,6};
         int[] result = new int[arr.length];
@@ -23,7 +23,7 @@ public class EvenOddRearrangement {
 }
 
 
-public class EvenOddRearrangement {
+public class EvenOddRearrangementInPlace {
     public static void main(String[] args){
         int[] arr = {1,2,3,4,5,6};
         int left = 0;
