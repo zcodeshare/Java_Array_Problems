@@ -1,32 +1,75 @@
-public class AlternatePositiveNegative {
+public class AltPosNegOrderPreserved {
     public static void main(String[] args) {
+        int[] arr = {1, -2, 3, -4, -1, 6, -7, 8};
+        int[] result = new int[arr.length];
 
-        int[] arr = {1, -2, 3, -4, -5, 6};
-        int[] pos = new int[arr.length];
-        int[] neg = new int[arr.length];
-        int p = 0, n = 0;
+        int[] positives = new int[arr.length];
+        int[] negatives = new int[arr.length];
+        int p = 0;
+        int n = 0;
 
-        for (int num : arr) {
-            if (num >= 0) {
-                pos[p++] = num;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0) {
+                positives[p++] = arr[i];
             } else {
-                neg[n++] = num;
+                negatives[n++] = arr[i];
             }
         }
 
-        int i = 0, pi = 0, ni = 0;
+        int idx = 0;
+        int pos = 0;
+        int neg = 0;
 
-        while (pi < p && ni < n) {
-            arr[i++] = pos[pi++];
-            arr[i++] = neg[ni++];
+        while (pos < p && neg < n) {
+            result[idx++] = positives[pos++];
+            result[idx++] = negatives[neg++];
         }
 
-        while (pi < p) {
-            arr[i++] = pos[pi++];
+        while (pos < p) {
+            result[idx++] = positives[pos++];
         }
 
-        while (ni < n) {
-            arr[i++] = neg[ni++];
+        while (neg < n) {
+            result[idx++] = negatives[neg++];
+        }
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+public class AltPosNegInPlace {
+    public static void main(String[] args) {
+        int[] arr = {1, -2, 3, -4, -1, 6, -7, 8};
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            if (arr[left] >= 0) {
+                left++;
+            } else if (arr[right] < 0) {
+                right--;
+            } else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        int i = 1;
+        int j = left;
+
+        while (i < arr.length && j < arr.length) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i += 2;
+            j++;
         }
 
         for (int num : arr) {
