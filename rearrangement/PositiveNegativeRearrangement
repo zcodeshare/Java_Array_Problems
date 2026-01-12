@@ -1,0 +1,54 @@
+public class PositiveNegativeOrderPreserved {
+    public static void main(String[] args) {
+        int[] arr = {1, -2, 3, -4, -1, 6};
+        int[] result = new int[arr.length];
+        int idx = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0) {
+                result[idx++] = arr[i];
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                result[idx++] = arr[i];
+            }
+        }
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+public class PositiveNegativeInPlace {
+    public static void main(String[] args) {
+        int[] arr = {1, -2, 3, -4, -1, 6};
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+
+            if (arr[left] >= 0) {
+                left++;
+            }
+            else if (arr[right] < 0) {
+                right--;
+            }
+            else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
